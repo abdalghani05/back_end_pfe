@@ -13,4 +13,9 @@ class Categorie extends Model
         'libelle',
         'description',
     ];
+
+    public function books()
+    {
+        return $this->hasMany(Book::class);
+    }
 }

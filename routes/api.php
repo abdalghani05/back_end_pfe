@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthorsController;
 use App\Http\Controllers\CategorieController;
+use App\Http\Controllers\BookController;
 
 // Route Authors
 Route::get('/Authors',[AuthorsController::class,'index']);
@@ -17,6 +18,12 @@ Route::get('/categorie',[CategorieController::class,'index']);
 Route::post('/categorie/save',[CategorieController::class, 'store']);
 Route::put('/categorie/update/{id}',[CategorieController::class, 'update']);
 Route::delete('/categorie/delete/{id}',[CategorieController::class, 'destroy']);
+
+//Route Book
+Route::get('/book',[BookController::class,'index']);
+Route::post('/book/save',[BookController::class, 'store']);
+Route::put('/book/update/{id}',[BookController::class, 'update']);
+Route::delete('/book/delete/{id}',[BookController::class, 'destroy']);
 
 
 
