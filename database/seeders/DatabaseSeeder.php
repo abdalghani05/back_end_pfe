@@ -12,11 +12,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
+        try {
+            \App\Models\Author::factory(100)->create();
+            \App\Models\Categorie::factory(100)->create();
+            \App\Models\Book::factory(100)->create();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        } catch (\Exception $e) {
+            dd($e->getMessage()); // Afficher le message de l'exception pour déboguer l'erreur
+        }
     }
 }

@@ -14,7 +14,13 @@ class Author extends Model
         'nom',
         'prenom',
         'description',
+        'status'
     ];
+
+    protected static function newFactory()
+    {
+        return \Database\Factories\AuthorFactory::new();
+    }
 
     public function books():HasMany
     {

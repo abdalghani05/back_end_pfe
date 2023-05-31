@@ -12,10 +12,12 @@ class Categorie extends Model
     protected $fillable=[
         'libelle',
         'description',
+        'status'
     ];
 
     public function books()
     {
         return $this->hasMany(Book::class);
     }
+
 }

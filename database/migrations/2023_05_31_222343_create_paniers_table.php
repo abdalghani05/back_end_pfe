@@ -11,13 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('books', function (Blueprint $table) {
+        Schema::create('paniers', function (Blueprint $table) {
             $table->id();
-            $table->string("title");
-            $table->date("publication_date");
-            $table->float("price");
-            $table->unsignedBigInteger('id_author');
-            $table->unsignedBigInteger('id_categorie');
+            $table->unsignedBigInteger('id_user');
+            $table->unsignedBigInteger('id_book');
+            $table->float("quantite");
+            $table->float("prixUnitaire");
+            $table->float("Montant");
             $table->boolean('status');
             $table->timestamps();
         });
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('books');
+        Schema::dropIfExists('paniers');
     }
 };

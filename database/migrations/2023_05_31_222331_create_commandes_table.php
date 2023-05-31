@@ -11,9 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('Books', function (Blueprint $table) {
-            $table->unsignedBigInteger('id_author');
-            $table->unsignedBigInteger('id_categorie');
+        Schema::create('commandes', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('id_user');
+            $table->date("dateCommande");
+            $table->float("Montant");
+            $table->string("paymentMethod");
             $table->boolean('status');
             $table->timestamps();
         });
@@ -24,11 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('Books', function (Blueprint $table) {
-            //
-            $table->dropColumn('id_author');
-            $table->dropColumn('id_categorie');
-            $table->dropColumn('status');
-        });
+        Schema::dropIfExists('commandes');
     }
 };

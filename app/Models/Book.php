@@ -18,18 +18,13 @@ class Book extends Model
         'status',
     ];
 
-    protected $fillable=[
-        'nom',
-        'prenom',
-        'description',
-    ];
     public function author()
     {
-        return $this->belongsTo(Author::class);
+        return $this->belongsTo(Author::class,'id_author');
     }
 
     public function categorie()
     {
-        return $this->belongsTo(Categorie::class);
+        return $this->belongsTo(Categorie::class, 'id_categorie');
     }
 }

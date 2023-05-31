@@ -11,7 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('categories   ', function (Blueprint $table) {
+        Schema::create('details_commande', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('id_book');
+            $table->unsignedBigInteger('id_commande');
+            $table->float("quantite");
+            $table->float("prixUnitaire");
+            $table->float("Montant");
             $table->timestamps();
         });
     }
@@ -21,8 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('categorie', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('details_commande');
     }
 };
