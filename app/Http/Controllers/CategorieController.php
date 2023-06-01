@@ -21,15 +21,6 @@ class CategorieController extends Controller
     public function store(Request $request)
     {
         return response()->json(Categorie::create($request->all()));
-
-
-        /*  $author = new Author([
-              'nom' => $request->input('nom'),
-              'prenom' => $request->input('prenom'),
-              'description' => $request->input('description'),
-          ]);
-          $author->save();
-          return response()->json('Author created!');*/
     }
 
     public function show($id)

@@ -13,9 +13,11 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         try {
-            \App\Models\Author::factory(100)->create();
-            \App\Models\Categorie::factory(100)->create();
             \App\Models\Book::factory(100)->create();
+            \App\Models\User::factory(100)->create();
+            \App\Models\Panier::factory(100)->create();
+            \App\Models\Commande::factory(100)->create();
+            \App\Models\DetailsCommande::factory(100)->create();
 
         } catch (\Exception $e) {
             dd($e->getMessage()); // Afficher le message de l'exception pour déboguer l'erreur

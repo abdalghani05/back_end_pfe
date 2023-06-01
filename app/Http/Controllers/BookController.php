@@ -35,7 +35,7 @@ class BookController extends Controller
 
     public function show($id)
     {
-        $contact = Book::find($id);
+        $contact = Book::with('categorie','author')->find($id);
         return response()->json($contact);
     }
 

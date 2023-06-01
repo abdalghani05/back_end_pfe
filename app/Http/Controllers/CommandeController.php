@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Commande;
 use Illuminate\Http\Request;
 
 class CommandeController extends Controller
@@ -11,15 +12,8 @@ class CommandeController extends Controller
      */
     public function index()
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+        $commande = Commande::with('user')->get();
+        return response()->json($commande);
     }
 
     /**
@@ -27,7 +21,7 @@ class CommandeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return response()->json(Commande::create($request->all()));
     }
 
     /**
@@ -35,15 +29,8 @@ class CommandeController extends Controller
      */
     public function show(string $id)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
+        $commande = Commande::with('user')->find($id);
+        return response()->json($commande);
     }
 
     /**
@@ -51,7 +38,10 @@ class CommandeController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+
+        $commande = Commande::find($id);
+        $commande->update($request->all());
+        return response()->json('Commande updated');
     }
 
     /**

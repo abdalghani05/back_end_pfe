@@ -16,6 +16,7 @@ return new class extends Migration
             $table->id();
             $table->string("nom");
             $table->string("prenom");
+            $table->string("photo");
             $table->longText('description');
             $table->boolean('status');
             $table->timestamps();

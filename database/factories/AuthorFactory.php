@@ -22,6 +22,7 @@ class AuthorFactory extends Factory
             'nom' => $this->faker->firstName,
             'prenom' => $this->faker->lastName,
             'description' => $this->faker->paragraph,
+            'photo'=>'https://cdn-icons-png.flaticon.com/512/16/16363.png',
             'status' => $this->faker->randomElement([1,0]),
         ];
     }

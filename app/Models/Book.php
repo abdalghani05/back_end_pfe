@@ -11,6 +11,7 @@ class Book extends Model
 
     protected $fillable=[
         'title',
+        'photo',
         'publication_date',
         'price',
         'id_author',
@@ -26,5 +27,9 @@ class Book extends Model
     public function categorie()
     {
         return $this->belongsTo(Categorie::class, 'id_categorie');
+    }
+    public function DetailCommande():HasMany
+    {
+        return $this->hasMany(DetailsCommande::class);
     }
 }

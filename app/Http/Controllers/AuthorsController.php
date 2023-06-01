@@ -16,7 +16,7 @@ class AuthorsController extends Controller
      */
     public function index()
     {
-        $author = Author::all('id','nom','prenom','description');
+        $author = Author::all('id','nom','prenom','description','photo');
         return response()->json($author);
 
     }
