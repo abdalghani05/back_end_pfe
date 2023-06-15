@@ -8,6 +8,15 @@ use App\Http\Controllers\BookController;
 use App\Http\Controllers\CommandeController;
 use App\Http\Controllers\PanierController;
 use App\Http\Controllers\DetailsCommandeController;
+use App\Http\Controllers\UserController;
+
+// Route User
+Route::get('/users',[UserController::class,'index']);
+//Route::get('/author/{id}',[UserController::class,'show']);
+//Route::post('/author/save',[UserController::class, 'store']);
+//Route::put('/author/update/{id}',[UserController::class, 'update']);
+//Route::delete('/author/delete/{id}',[UserController::class, 'destroy']);
+
 
 // Route Authors
 Route::get('/author',[AuthorsController::class,'index']);

@@ -2,18 +2,26 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\DetailsCommande;
+use App\Models\User;
 use Illuminate\Http\Request;
 
-class DetailsCommandeController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $detailCommande = DetailsCommande::with('commande','book')->get();
-        return response()->json($detailCommande);
+        $user = User::all();
+        return response()->json($user);
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        //
     }
 
     /**
@@ -21,7 +29,7 @@ class DetailsCommandeController extends Controller
      */
     public function store(Request $request)
     {
-        return response()->json(DetailsCommande::create($request->all()));
+        //
     }
 
     /**
@@ -29,17 +37,23 @@ class DetailsCommandeController extends Controller
      */
     public function show(string $id)
     {
-        $detail_commande = DetailsCommande::with('commande','book')->find($id);
-        return response()->json($detail_commande);
+        //
     }
+
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(string $id)
+    {
+        //
+    }
+
     /**
      * Update the specified resource in storage.
      */
     public function update(Request $request, string $id)
     {
-        $detail_commande = DetailsCommande::find($id);
-        $detail_commande->update($request->all());
-        return response()->json('Detail ng scommande updated');
+        //
     }
 
     /**
