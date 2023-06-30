@@ -17,19 +17,11 @@ class UserController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
-        //
+        return response()->json(User::create($request->all()));
     }
 
     /**
@@ -37,7 +29,8 @@ class UserController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $contact = User::find($id);
+        return response()->json($contact);
     }
 
     /**

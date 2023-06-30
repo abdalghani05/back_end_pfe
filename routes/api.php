@@ -12,8 +12,8 @@ use App\Http\Controllers\UserController;
 
 // Route User
 Route::get('/users',[UserController::class,'index']);
-//Route::get('/author/{id}',[UserController::class,'show']);
-//Route::post('/author/save',[UserController::class, 'store']);
+Route::get('/users/{id}',[UserController::class,'show']);
+Route::post('/users/save',[UserController::class, 'store']);
 //Route::put('/author/update/{id}',[UserController::class, 'update']);
 //Route::delete('/author/delete/{id}',[UserController::class, 'destroy']);
 
@@ -48,11 +48,11 @@ Route::put('/panier/update/{id}',[PanierController::class, 'update']);
 Route::delete('/panier/delete/{id}',[PanierController::class, 'destroy']);
 
 //Route Commande
-Route::get('/commande',[CommandeController::class,'index']);
-Route::get('/commande/{id}',[CommandeController::class,'show']);
-Route::post('/commande/save',[CommandeController::class, 'store']);
-Route::put('/commande/update/{id}',[CommandeController::class, 'update']);
-Route::delete('/commande/delete/{id}',[CommandeController::class, 'destroy']);
+Route::get('/Commande',[CommandeController::class,'index']);
+Route::get('/Commande/{id}',[CommandeController::class,'show']);
+Route::post('/Commande/save',[CommandeController::class, 'store']);
+Route::put('/Commande/update/{id}',[CommandeController::class, 'update']);
+Route::delete('/Commande/delete/{id}',[CommandeController::class, 'destroy']);
 
 //Route Detail Commande
 Route::get('/DetailCommande',[DetailsCommandeController::class,'index']);
