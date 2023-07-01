@@ -9,6 +9,21 @@ use App\Http\Controllers\CommandeController;
 use App\Http\Controllers\PanierController;
 use App\Http\Controllers\DetailsCommandeController;
 use App\Http\Controllers\UserController;
+use  App\Http\Controllers\AuthController;
+
+Route::group([
+
+    'middleware' => 'api',
+    'prefix' => 'auth'
+
+], function ($router) {
+
+    Route::post('login', 'AuthController@login');
+    Route::post('logout', 'AuthController@logout');
+    Route::post('refresh', 'AuthController@refresh');
+    Route::post('me', 'AuthController@me');
+
+});
 
 // Route User
 Route::get('/users',[UserController::class,'index']);
